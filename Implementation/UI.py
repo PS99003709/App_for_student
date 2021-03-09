@@ -16,15 +16,15 @@ def sel1():
     label.config(text = selection)
  
 
-# root = Tk()
-# root.geometry('300x300') 
-# root.title('Performance Tracker')
-# var = IntVar()
-# l = Label(root, text = "Choose the Course") 
-# l.config(font =("Courier", 12)) 
-# l.pack()
-# var1 = IntVar()
-# var2 = IntVar()
+root = Tk()
+root.geometry('300x300') 
+root.title('Performance Tracker')
+var = IntVar()
+l = Label(root, text = "Choose the Course") 
+l.config(font =("Courier", 12)) 
+l.pack()
+var1 = IntVar()
+var2 = IntVar()
 # C1 = Checkbutton(root, text = "Python", variable = var1, \
 #                  onvalue = 1, offvalue = 0, height=2, \
 #                  width = 5 , command = sel1)
