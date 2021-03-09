@@ -25,12 +25,12 @@ l.config(font =("Courier", 12))
 l.pack()
 var1 = IntVar()
 var2 = IntVar()
-# C1 = Checkbutton(root, text = "Python", variable = var1, \
-#                  onvalue = 1, offvalue = 0, height=2, \
-#                  width = 5 , command = sel1)
+C1 = Checkbutton(root, text = "Python", variable = var1, \
+                 onvalue = 1, offvalue = 0, height=2, \
+                 width = 5 , command = sel1)
 
-# C1.pack()
+C1.pack()
 
-# label = Label(root)
-# label.pack()
-# root.mainloop()
+label = Label(root)
+label.pack()
+root.mainloop()
