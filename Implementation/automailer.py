@@ -70,65 +70,65 @@ def maximum():
 
 
 
-# def minimum():
-#     minpresurvey = pre_survey.nsmallest(3, ["pre_survey_total"])
-#     minpossurvey = post_survey.nsmallest(3, ["post_survey_total"])
-#     minpretest = pre_test.nsmallest(3, ["pre_test_total"])
-#     minpostest = post_test.nsmallest(3, ["post_test_total"]) 
+def minimum():
+    minpresurvey = pre_survey.nsmallest(3, ["pre_survey_total"])
+    minpossurvey = post_survey.nsmallest(3, ["post_survey_total"])
+    minpretest = pre_test.nsmallest(3, ["pre_test_total"])
+    minpostest = post_test.nsmallest(3, ["post_test_total"]) 
 
-#     frames = [minpresurvey,minpretest,minpossurvey,minpostest]
+    frames = [minpresurvey,minpretest,minpossurvey,minpostest]
     
-#     return (pd.concat(frames))
+    return (pd.concat(frames))
 
 
-# def send_mail(body1,body2):
-#     faculty_radar_graph()
+def send_mail(body1,body2):
+    faculty_radar_graph()
     
-#     image1 = 'Consolidated_class.png'
+    image1 = 'Consolidated_class.png'
 
-#     message = MIMEMultipart()
-#     message['Subject'] = 'Top 5 Students of class'
-#     message['From'] = 'learningcorporate7@gmail.com'
-#     message['To'] = 'pareekashish2196@gmail.com'
+    message = MIMEMultipart()
+    message['Subject'] = 'Top 5 Students of class'
+    message['From'] = 'learningcorporate7@gmail.com'
+    message['To'] = 'pareekashish2196@gmail.com'
     
-#     body_text = "Top 5 students of your module"
-#     body_content = body1
-#     message.attach(MIMEText(body_text))
-#     message.attach(MIMEText(body_content, "html"))
+    body_text = "Top 5 students of your module"
+    body_content = body1
+    message.attach(MIMEText(body_text))
+    message.attach(MIMEText(body_content, "html"))
     
-#     body_text = "Bottom 3 students of your module"
-#     body_content = body2
-#     message.attach(MIMEText(body_text))
-#     message.attach(MIMEText(body_content, "html"))
+    body_text = "Bottom 3 students of your module"
+    body_content = body2
+    message.attach(MIMEText(body_text))
+    message.attach(MIMEText(body_content, "html"))
     
 
-#     with open(image1, "rb") as attachment:
-#         part = MIMEBase("application", "octet-stream")
-#         part.set_payload(attachment.read())
+    with open(image1, "rb") as attachment:
+        part = MIMEBase("application", "octet-stream")
+        part.set_payload(attachment.read())
 
-#     encoders.encode_base64(part)
-#     part.add_header('Content-Disposition',"attachment; filename= %s" % image1)
-#     message.attach(part)
+    encoders.encode_base64(part)
+    part.add_header('Content-Disposition',"attachment; filename= %s" % image1)
+    message.attach(part)
 
-#     message.attach(MIMEText(image1))
-#     msg_body = message.as_string()
+    message.attach(MIMEText(image1))
+    msg_body = message.as_string()
 
-#     server = SMTP('smtp.gmail.com', 587)
-#     server.starttls()
-#     server.login(message['From'], '99003708')
-#     server.sendmail(message['From'], message['To'], msg_body)
-#     server.quit()
+    server = SMTP('smtp.gmail.com', 587)
+    server.starttls()
+    server.login(message['From'], '99003708')
+    server.sendmail(message['From'], message['To'], msg_body)
+    server.quit()
 
 
 
-# def send_data_to_teacher():
-#     top_data = maximum()
-#     bottom_data= minimum()
-#     output1 = build_table(top_data, 'blue_light')
-#     output2 = build_table( bottom_data, 'blue_light')
-#     send_mail(output1,output2)
+def send_data_to_teacher():
+    top_data = maximum()
+    bottom_data= minimum()
+    output1 = build_table(top_data, 'blue_light')
+    output2 = build_table( bottom_data, 'blue_light')
+    send_mail(output1,output2)
 
-#     return "Mail sent successfully."
+    return "Mail sent successfully."
 
 def send_mail_student():
         '''To send mails'''
